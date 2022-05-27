@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Summary
+{% endblock %}
+
+{% block main %}
+    <h1>Virtual Portfolio</h1>
+    <br><br><hr><br><br>
+    {% if empty_portfolio == "1" %}
+    <h5>Your virtual portfolio is empty!<br><br>To add to your virtual portfolio, click the 'Buy' button on the navigation bar.<br><br>You can add virtual funds by adding cash below.<br><br><br><hr><br></h5>
+    {% else %}
+    <div id="portfolio">
+        <div>
+            <h5 style="font-weight: 400;">Your virtual porfolio value is: <text style="font-weight: 500;">{{ total }}</text>&ensp;<br><br>Total value of holdings: <text style="font-weight: 500;">{{ holding_total }}</text></h5><br>
+        </div>
+        <div>
+            <table class="center">
+                <tr>
+                    <th>Name / Symbol</th><th>Avg. Buy Price</th><th>Qty</th><th>Price</th><th>Value</th><th>24hr %</th><th>Profit/Loss %</th>
+                </tr>
+                {% for entry in entries %}
+                <tr>
+                    <td><a href="{{ entry.slug }}" style="color: black;">{{ entry.name }} ({{ entry.symbols }})</a></td><td>{{ entry.prices }}</td><td>{{ entry.qtys }}</td><td>{{ entry.cprices }}</td><td>{{ entry.cvalues }}</td><td>{{ entry.pcchange24h }}</td><td>{{ entry.pnl }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        <br>
+    </div>
+    {% endif %}
+    <h5 style="font-weight: 400;">Your cash balance is: <text style="font-weight: 500;">{{ balance }}</text></h5><br>
+    <button onclick="location.href='/add';" class="btn btn-primary">Add cash</button>&emsp;<button onclick="location.href='/withdraw';" class="btn btn-primary">Withdraw cash</button>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+
+{% block main %}
+    <h1>Add Cash</h1><br><br>
+    <form action="/add" method="post">
+        <div class="form-group">
+            <text style="font-size: 120%; padding: 10px; font-weight: 500;">US$</text><input autocomplete="off" autofocus class="form-control" name="cash" placeholder="Enter amount" type="number" min="0.01" step="0.01">
+        </div>
+        <br>
+        <text style="font-size: 105%;">Current balance:&ensp;<text style="font-weight: 500; font-size: 110%;">{{ balance }}</text>&emsp;</text>
+        <button class="btn btn-primary" type="submit">Add cash</button>
+        <br><br><br><hr>
+    </form>
+{% endblock %}

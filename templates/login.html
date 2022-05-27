@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h1>Welcome.</h1><br><br>
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div><br>
+        <button class="btn btn-primary" type="submit">Log In</button>
+        <br><hr><br>
+        <div>
+            {% if login_errs == "a" %}
+            <image src="/static/error.jpg" style="width: 40px;"></image><br>
+            <text id="register-errors" class="form-group">You must provide a username and password. Please enter again.</text><br><hr><br>
+            {% elif login_errs == "b" %}
+            <image src="/static/error.jpg" style="width: 40px;"></image><br>
+            <text id="register-errors" class="form-group">Incorrect username and/or password. Please try again or <a href="/register">register </a>for a new account</text><br><hr><br>
+            {% elif new_reg == "a" %}
+            <image src="/static/success.png" style="width: 25px;"></image><br>
+            <text id="register-errors" class="form-group">Thank you for registering! Please log in with your username and password.</text><br><hr><br>
+            {% endif %}
+        </div>
+    </form>
+{% endblock %}

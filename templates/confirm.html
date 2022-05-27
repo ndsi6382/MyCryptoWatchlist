@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Confirm
+{% endblock %}
+
+{% block main %}
+    <h1>Confirming your transaction request:</h1><br><br>
+        <text style="font-size: 105%;">You will be{% if action == "buy" %} purchasing{% elif action == "sell" %} selling{% endif %}
+            <text style="font-weight: 500; font-size: 110%;">{{ txn_data.qtys|abs }} {{ txn_data.symbols }}</text> at an average price of
+            <text style="font-weight: 500; font-size: 110%;">US${{ '%0.2f'|format(txn_data.prices|float) }}</text> for a total transaction size of
+            <text style="font-weight: 500; font-size: 110%;">US${{ '%0.2f'|format(txn_data.size|float) }}</text>
+        <br>Would you like to confirm this transaction?<br><br>
+        </text><br>
+        <form action="/confirm" method="post">
+            <div class="form-group">
+                <a href="/{{ action }}" class="btn btn-primary">Back</a>&emsp;&emsp;
+                <button name="trans_conf" class="btn btn-primary" value="{{ txn_data }}" type="submit">Confirm</button>
+                <br><br><br><hr>
+            </div>
+        </form>
+    <text style="font-size: 105%;">Your current balance is:&ensp;<text style="font-weight: 500; font-size: 110%;">US${{ '%0.2f'|format(txn_data.init_balance|float) }}</text></text><br>
+    <text style="font-size: 105%;">Your remaining balance after this transaction will be:&ensp;<text style="font-weight: 500; font-size: 110%;">US${{ '%0.2f'|format((txn_data.newbalance)|float) }}</text></text><br>
+{% endblock %}

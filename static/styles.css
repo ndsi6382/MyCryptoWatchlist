@@ -1,0 +1,99 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+.show-hide
+{
+    visibility: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+table
+{
+    font-size: medium;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+th
+{
+    border: 1px solid #226ebf;
+    background-color: #80bdff;
+    width: 5%;
+    padding: 10px;
+}
+
+td
+{
+    background-color: #e0efff;
+    border: 1px solid #226ebf;
+    width: 5%;
+    padding: 10px;
+}
+
+#emptymessage {
+    display: none;
+    visibility: hidden;
+}
+
+#dropdown {
+    font-family: helvetica;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: #444444;
+    width: 20%;
+    text-align: left;
+    margin: auto;
+}
+
+#dropdownopts {
+    color: black;
+    padding: 10px;
+}

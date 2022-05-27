@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Summary
+{% endblock %}
+
+{% block main %}
+    <h1>Watchlist</h1>
+    <br><br><hr><br><br>
+    {% if no_watchlist == "1" %}
+    <h5>Your watchlist is empty!<br><br>Check prices and add to your watchlist by clicking the button below.<br><br><br><hr><br></h5>
+    {% else %}
+    <div id="watchlist">
+        <div>
+            <table class="center">
+                <tr>
+                    <th style="width: 2%;">Market Rank</th><th>Name / Symbol</th><th>Price</th><th style="width: 2%;">24hr %</th><th style="width: 2%;">7d %</th><th style="width: 2%;">30d %</th></th><th style="width: 2%;">Market Dominance</th>
+                </tr>
+                <form action="/" method="post">
+                    {% for entry in watchlist %}
+                    <tr>
+                        <td style="width: 2%;">{{ entry.mkt_rank }}</td>
+                        <td><a href="{{ entry.slug }}" target="_blank" style="color: black;">{{ entry.name }} ({{ entry.symbol }})</a></td>
+                        <td style="width: 2%;">{{ entry.price }}</td>
+                        <td style="width: 2%;">{{ entry.pcchange24h }}</td>
+                        <td style="width: 2%;">{{ entry.pcchange7d }}</td>
+                        <td style="width: 2%;">{{ entry.pcchange30d }}</td>
+                        <td style="width: 2%;">{{ entry.mkt_dom }}</td>
+                        <td style="border: none; background-color: #ffffff; text-align: left; width: 0.5%;"><button name="rem_watch" type="submit" class="btn btn-primary" value="{{ entry.symbol }}">Remove</button></td>
+                    </tr>
+                    {% endfor %}
+                </form>
+            </table>
+        </div>
+        <br>
+        <br>
+    </div>
+    {% endif %}
+    <a href="/quote" class="btn btn-primary">Add to Watchlist</a>
+{% endblock %}

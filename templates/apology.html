@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+    <h1>Oops!</h1><br><br>
+    <text style="font-size: 105%;">Looks like I'm broken now...</text><br><br><hr><br>
+    <h3>Error {{ top }}</h3><br>
+    <img src="/static/errorpage.png" style="width: 15%;"><br><br>
+    <text style="font-size: 105%;">{{ bottom }}... Yikes!</text><br><br><hr>
+    <!-- <img alt="{{ top }}" class="border" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://i.imgur.com/CsCgN7Ll.png" title="{{ top }}"> -->
+{% endblock %}

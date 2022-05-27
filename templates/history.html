@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h1>Transaction History</h1>
+    <br><br><hr><br><br>
+    {% if history_err == "1" %}
+    <h5>You have made no transactions yet!<br><br>Use the navigation bar above to make a transaction.<br><br><br><hr><br></h5>
+    <h5 style="font-weight: 450;">Your available cash balance is: <text style="font-weight: 550;">{{ balance }}</text></h5><br>
+    {% else %}
+    <h5 style="font-weight: 450;">Your available cash balance is: <text style="font-weight: 550;">{{ balance }}</text></h5><br>
+    <div id="trans_hist">
+        <div>
+            <table class="center">
+                <tr>
+                    <th>#</th><th>Action</th><th>Name / Symbol</th><th>Price</th><th>Qty</th><th>Value</th><th>Timestamp</th>
+                </tr>
+                {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.id }}</td><td>{{ entry.action }}</td><td>{{ entry.symbols }}</td><td>{{ entry.prices }}</td><td>{{ entry.qtys }}</td><td>{{ entry.value }}</td><td>{{ entry.times }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        <br>
+    </div>
+    {% endif %}
+{% endblock %}
