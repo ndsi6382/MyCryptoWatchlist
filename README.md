@@ -1,4 +1,4 @@
-# My Crypto Watchlist
+# CS50 Final Project - CMC Watchlist
 
 #### Video Demo: https://youtu.be/l64mEMuxof8
 
@@ -6,15 +6,6 @@
 This is a basic cryptocurrency watchlist web application, inspired by the CS50 'finance' problem set and then further expanded upon.
 As well as a watchlist, there is the ability to make virtual trades in a virtual portfolio, to test trading strategies.
 The data is pulled directly via an API from CoinMarketCap.
-
-I hope to expand upon this application in the future for further learning and development.
-I would like to implement features such as a conversion to AUD, graphs, and (Australian) tax calculators for the virtual portfolio, as well as account settings.
-
-I found this project to be both challenging and rewarding. The implementation of this program proved to be difficult because I wanted to prioritise the user experience.
-There are several additional layers of difficulty when allowing users to choose to buy in quantity or value (in USD).
-The variable nature of cryptocurrency prices and their unit divisions creates mathematical rounding difficulties as well: For example, US$1 = 0.00001722 BTC OR  US$1 = 19230.77 SHIB
-
-The following is a list of what each page/feature does.
 
 Login/Register/Logout:
 Users can register and log in/out to the website. An error notification is passed into the HTML of the webpage if there is a user-made error.
@@ -55,7 +46,3 @@ History:
 This screen will display the entire transaction history of a user.
 The cash balance is also displayed at the top.
 The table reflects the transaction ID, action (buy or sell), name, price, qty, value, and timestamp.
-
-Future:
-I would like to incorporate settings, allowing users to change their passwords or delete their accounts.
-I would also like to support AUD conversions, and implement a tax section (Australian) in the virtual portfolio. This could become very useful as a tracker rather than just a watchlist.
