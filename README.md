@@ -1,11 +1,11 @@
 # My Crypto Watchlist
 ## CS50x 2021 Final Project
 
-***EDIT:*** *This is assignment/project is here for archival purposes only. A video demonstration from its time of 'completion' can be found
-[HERE.](https://youtu.be/l64mEMuxof8)*
+***NOTE:*** *This is project was created for the final assignment for the CS50x course, and is here for archival purposes only. 
+A video demonstration from its time of submission can be found [HERE.](https://youtu.be/l64mEMuxof8)*
 
 ## Description
-This is a basic cryptocurrency watchlist web application, inspired by the CS50 'finance' problem set and then further expanded upon.
+This is a basic cryptocurrency watchlist web application, inspired by the CS50x 'finance' problem set and then further expanded upon.
 As well as a watchlist, there is the ability to make virtual trades in a virtual portfolio, to test trading strategies.
 The data is pulled directly via an API from CoinMarketCap.
 
